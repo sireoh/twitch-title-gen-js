@@ -1,0 +1,25 @@
+body {
+    overflow: hidden; /* Hide scrollbars */
+    font-family: 'Short Stack', cursive;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 10px; /* Add some padding to the container */
+    position: relative; /* Set the position to relative for positioning children */
+}
+
+.text-container {
+    background-color: rgba(0, 0, 0, 0.75); /* Black background with 50% opacity */
+    border-radius: 10px; /* Add rounded corners for a nicer look */
+    color: white; /* Make the text white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 10px; /* Add padding for better readability */
+    position: absolute; /* Set the position to absolute */
+    top: 0; /* Position from the top */
+    left: 0; /* Position from the left */
+}
+
+.text {
+    font-size: 2em;
+    font-weight: bold;
+}
