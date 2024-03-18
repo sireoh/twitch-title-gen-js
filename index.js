@@ -3,11 +3,6 @@ const wordArray = words.split("\n")
 var i = 0;
 var text = "";
 
-function scanOption() {
-  let scan = prompt("1: generate\t2: mic off\n3: custom");
-  return scan;
-}
-
 function scanTitle() {
   let scan = prompt("Custom Title: ");
   return scan;
@@ -46,26 +41,42 @@ function printEmojis() {
   return emojiout;
 }
 
-function changeTitle() {
-  let option = scanOption();
+function customTitle() {
+  let custom = prompt("custom: ");
   /*
-  * Option 1: default.
-  * Option 2: [mic off] hello world.
-  * Option 3: custom.
+  * OK: mic on.
+  * Cancel: mic off.
   */
-  switch(option) {
+  switch(prompt("OK: mic on\nCancel: mic off", "1")) {
     case "1":
-      document.getElementById("text").innerHTML = printWords() + " " + printEmojis();
+      document.getElementById("text").innerHTML = custom + " " + printEmojis();
       break;
 
-    case "2":
-      document.getElementById("text").innerHTML = `[mic off] ${printWords()} ${printEmojis()}`;
-      break;
-    
-    case "3":
-      document.getElementById("text").innerHTML = scanTitle() + " " + printEmojis();
+    default:
+      document.getElementById("text").innerHTML = `[mic off] ${custom} ${printEmojis()}`;
       break;
   };
 }
 
-changeTitle();1
+function changeTitle() {
+  /*
+  * OK: default.
+  * Cancel: [mic off] hello world.
+  * Option 2: custom.
+  */
+  switch(prompt("OK: default\tCancel: no mic\t\n2: custom", "1")) {
+    case "1":
+      document.getElementById("text").innerHTML = printWords() + " " + printEmojis();
+      break;
+    
+    case "2":
+      customTitle();
+      break;
+
+    default:
+      document.getElementById("text").innerHTML = `[mic off] ${printWords()} ${printEmojis()}`;
+      break;
+  };
+}
+
+changeTitle();
