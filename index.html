@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>eoh Twitch Title Gen</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+    <title>title gen | eoh</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./app/img/daru.png">
 </head>
 <body>
-    <div class="container">
-        <div id="b_text" class="text"></div>
-    </div>
-    <script src="app.js"></script>
+    <span id="text"></span>
+
+    <!-- secondary JavaScript files: emojis, words -->
+    <script src="./app/data/emojis.js"></script>
+    <script src="./app/data/words.js"></script>
+
+    <!-- main JavaScript file -->
+    <script src="index.js"></script>
 </body>
 </html>

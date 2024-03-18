@@ -1,19 +1,12 @@
 body {
-    font-family: 'Short Stack';
-    display: grid;
-	grid-template-columns: 60% 40%;
-    height: 100vh;
-    margin: 0;
+    margin: 0 0 0 0.5em;
 }
 
-.container {
-    padding-top: 0.5%;
-	padding-left: 0.5%;
-    color: white;
-}
-
-.text {
+span {
+	font-family: 'Short Stack';
+	color: white;
+	font-size: 3em;
 	background-color: rgba(0, 0, 0, 0.75);
-    font-size: 2em;
-    font-weight: bold;
+	padding: 0.2em;
+	border-radius: 16px;
 }
