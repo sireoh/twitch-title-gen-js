@@ -1,7 +1,5 @@
 ﻿const emojiArray = emojis.split("\n")
 const wordArray = words.split("\n")
-var i = 0;
-var text = "";
 
 function scanTitle() {
   let scan = prompt("Custom Title: ");
@@ -49,11 +47,11 @@ function customTitle() {
   */
   switch(prompt("OK: mic on\nCancel: mic off", "1")) {
     case "1":
-      document.getElementById("text").innerHTML = custom + " " + printEmojis();
+      $("#text").html(`[mic on] ${custom} ${printEmojis()}`);
       break;
 
     default:
-      document.getElementById("text").innerHTML = `[mic off] ${custom} ${printEmojis()}`;
+      $("#text").html(`[mic off] ${custom} ${printEmojis()}`);
       break;
   };
 }
@@ -66,7 +64,7 @@ function changeTitle() {
   */
   switch(prompt("OK: default\tCancel: no mic\t\n2: custom", "1")) {
     case "1":
-      document.getElementById("text").innerHTML = printWords() + " " + printEmojis();
+      $("#text").html(`[mic on] ${printWords()} ${printEmojis()}`);
       break;
     
     case "2":
@@ -74,9 +72,12 @@ function changeTitle() {
       break;
 
     default:
-      document.getElementById("text").innerHTML = `[mic off] ${printWords()} ${printEmojis()}`;
+      $("#text").html(`[mic off] ${printWords()} ${printEmojis()}`);
       break;
   };
 }
 
-changeTitle();
+$(document).ready(() => {
+  changeTitle();
+  $("body").on("click", changeTitle);
+});
